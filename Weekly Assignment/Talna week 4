@@ -1,0 +1,157 @@
+Write c++ data Structure Pseudocode: selection and iteration statements 
+
+1. Data Structure Pseudocode
+
+Example: Array Data Structure
+
+Pseudocode
+
+BEGIN
+  DECLARE array A of size 5
+  FOR i = 0 to 4
+     READ A[i]
+  END FOR
+
+  FOR i = 0 to 4
+     PRINT A[i]
+  END FOR
+END
+
+C++ Implementation
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int A[5];
+
+    for (int i = 0; i < 5; i++) {
+        cin >> A[i];
+    }
+
+    for (int i = 0; i < 5; i++) {
+        cout << A[i] << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+2. Selection Statements
+
+(a) if Statement
+
+Pseudocode
+
+IF marks >= 50
+   PRINT "Pass"
+END IF
+
+C++ Code
+
+if (marks >= 50) {
+    cout << "Pass";
+}
+
+
+
+
+(b) if–else Statement
+
+Pseudocode
+
+IF number is even
+   PRINT "Even"
+ELSE
+   PRINT "Odd"
+END IF
+
+C++ Code
+
+if (number % 2 == 0) {
+    cout << "Even";
+} else {
+    cout << "Odd";
+}
+
+
+
+
+(c) switch Statement
+
+Pseudocode
+
+SWITCH day
+  CASE 1: PRINT "Monday"
+  CASE 2: PRINT "Tuesday"
+  DEFAULT: PRINT "Invalid"
+END SWITCH
+
+C++ Code
+
+switch(day) {
+    case 1: cout << "Monday"; break;
+    case 2: cout << "Tuesday"; break;
+    default: cout << "Invalid";
+}
+
+
+
+
+3. Iteration (Looping) Statements
+
+(a) for Loop
+
+Pseudocode
+
+FOR i = 1 to 5
+   PRINT i
+END FOR
+
+C++ Code
+
+for (int i = 1; i <= 5; i++) {
+    cout << i << endl;
+}
+
+
+
+
+(b) while Loop
+
+Pseudocode
+
+WHILE i <= 5
+   PRINT i
+   i = i + 1
+END WHILE
+
+C++ Code
+
+int i = 1;
+while (i <= 5) {
+    cout << i << endl;
+    i++;
+}
+
+
+
+
+(c) do–while Loop
+
+Pseudocode
+
+DO
+   PRINT i
+   i = i + 1
+WHILE i <= 5
+
+C++ Code
+
+int i = 1;
+do {
+    cout << i << endl;
+    i++;
+} while (i <= 5);
