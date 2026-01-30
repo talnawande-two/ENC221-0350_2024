@@ -1,0 +1,98 @@
+Week 9: Polymorphism – Abstract Employee Class
+Task Summary:
+Design an abstract class Employee and two derived classes Manager and Secretary that override the function earnings().
+1. Class Requirements
+Abstract Class: Employee
+Data members: name, id
+Pure virtual function:
+earnings()
+Derived Classes
+Class
+Extra Member
+Earnings Calculation
+Manager
+basicSalary
+earnings = basicSalary + 20000
+Secretary
+basicSalary
+earnings = basicSalary + 10000
+2. Pseudocode
+Copy code
+
+BEGIN
+  CLASS Employee
+     PROTECTED name, id
+     FUNCTION earnings() IS PURE VIRTUAL
+  END CLASS
+
+  CLASS Manager INHERITS Employee
+     FUNCTION earnings()
+  END CLASS
+
+  CLASS Secretary INHERITS Employee
+     FUNCTION earnings()
+  END CLASS
+
+  CREATE objects
+  DISPLAY earnings polymorphically
+END
+3. C++ Program
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee {
+protected:
+    string name;
+    int id;
+
+public:
+    Employee(string n, int i) {
+        name = n;
+        id = i;
+    }
+
+    virtual double earnings() = 0;   // Pure virtual function
+};
+
+class Manager : public Employee {
+    double basicSalary;
+
+public:
+    Manager(string n, int i, double b)
+        : Employee(n, i) {
+        basicSalary = b;
+    }
+
+    double earnings() {
+        return basicSalary + 20000;
+    }
+};
+
+class Secretary : public Employee {
+    double basicSalary;
+
+public:
+    Secretary(string n, int i, double b)
+        : Employee(n, i) {
+        basicSalary = b;
+    }
+
+    double earnings() {
+        return basicSalary + 10000;
+    }
+};
+
+int main() {
+    Employee *e1 = new Manager("Ali", 101, 50000);
+    Employee *e2 = new Secretary("Mary", 102, 30000);
+
+    cout << "Manager Earnings: " << e1->earnings() << endl;
+    cout << "Secretary Earnings: " << e2->earnings() << endl;
+
+    delete e1;
+    delete e2;
+
+    return 0;
+}
