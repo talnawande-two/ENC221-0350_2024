@@ -1,0 +1,51 @@
+Standard C++ review — discuss main function and namespace collection; attributes of main & use of namespace
+
+main function (role and attributes):
+
+•	Entry point of every C++ program. Signature variants commonly used:
+
+•	int main() — no arguments.
+
+•	int main(int argc, char* argv[]) (or char** argv) — command-line arguments: argc count, argv array of C-strings.
+
+•	Must return an int. Returning 0 typically indicates success; non-zero indicates error. If control reaches end of main without return, C++ implicitly returns 0.
+
+•	main should be defined once in the program. It can call other functions, set up program state, and return status to the OS.
+
+
+namespace (purpose and std):
+
+•	Namespaces group names (types, functions, variables) to avoid name collisions.
+
+•	Standard library content lives in the std namespace. Example: std::vector, std::cout.
+
+•	You can introduce your own namespaces:
+
+namespace mylib {
+    void foo() { /*...*/ }
+}
+
+Use via mylib::foo();.
+
+•	Two ways to access std:
+
+1.	Fully qualify: std::cout << "Hello\n"; (recommended for clarity).
+
+2.	using declarations:
+
+-using std::cout; (imports one name).
+
+ -using namespace std; (imports entire namespace — convenient but can cause name collisions, avoid in headers).
+
+
+
+•	Namespaces can be nested and extended across translation units.
+
+
+•	Short example showing main and namespace usage:
+
+#include <iostream>
+int main(int argc, char* argv[]) {
+    std::cout << "Program name: " << (argc ? argv[0] : "unknown") << "\n";
+    return 0;
+}
