@@ -1,0 +1,82 @@
+Week 12: Integrated C++ Practical 
+Task
+Write a C++ program that:
+Uses a class
+Stores multiple students in an array
+Saves data into a file
+Reads from file
+Uses exception handling
+1.	Pseudocode
+
+
+BEGIN
+  CLASS Student
+     Name, marks
+     FUNCTION display()
+  END CLASS
+
+  DECLARE array students[3]
+
+  FOR i = 0 to 2
+     READ student name and marks
+     IF marks < 0 OR marks > 100
+        THROW error
+     END IF
+  END FOR
+
+  WRITE students to file
+
+  READ students from file
+  DISPLAY students
+END
+2.	C++ Program 
+
+#include <iostream>
+#include <fstream>
+#include <string>
+Using namespace std;
+
+Class Student {
+Public:
+    String name;
+    Int marks;
+
+    Void display() {
+        Cout << name << “ “ << marks << endl;
+    }
+};
+
+Int main() {
+    Student students[3];
+
+    Try {
+        For (int i = 0; i < 3; i++) {
+            Cout << “Enter name and marks: “;
+            Cin >> students[i].name >> students[i].marks;
+
+            If (students[i].marks < 0 || students[i].marks > 100)
+                Throw students[i].marks;
+        }
+    }
+    Catch (int) {
+        Cout << “Invalid marks! Must be between 0 and 100.\n”;
+        Return 0;
+    }
+
+    Ofstream out(“records.txt”);
+    For (int i = 0; i < 3; i++) {
+        Out << students[i].name << “ “ << students[i].marks << endl;
+    }
+    Out.close();
+
+    Ifstream in(“records.txt”);
+    Student temp;
+
+    Cout << “\nStudents from file:\n”;
+    While (in >> temp.name >> temp.marks) {
+        Temp.display();
+    }
+    In.close();
+
+    Return 0;
+}
