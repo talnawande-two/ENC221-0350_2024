@@ -1,0 +1,88 @@
+ Arrays
+Write a program that creates an array of 20 integers in which each element is between 1 and 100. The program then creates two arrays: one holding odd values and the other holding even values.
+
+
+
+
+Check each value:
+
+If divisible by 2 → even array
+
+Else → odd array
+
+Display all three arrays
+
+
+
+
+
+1.	Pseudocode 
+
+BEGIN
+  DECLARE array A[20]
+  DECLARE array even[20], odd[20]
+  SET eCount = 0, oCount = 0
+
+  FOR i = 0 to 19
+     READ A[i]
+  END FOR
+
+  FOR i = 0 to 19
+     IF A[i] MOD 2 == 0 THEN
+        Even[eCount] = A[i]
+        eCount = eCount + 1
+     ELSE
+        Odd[oCount] = A[i]
+        oCount = oCount + 1
+     END IF
+  END FOR
+
+  PRINT even array
+  PRINT odd array
+END
+
+
+
+2.	C++ Program
+
+#include <iostream>
+Using namespace std;
+
+Int main() {
+    Int A[20];
+    Int even[20], odd[20];
+    Int eCount = 0, oCount = 0;
+
+    Cout << “Enter 20 integers between 1 and 100:\n”;
+    For (int i = 0; i < 20; i++) {
+        Cin >> A[i];
+    }
+
+    For (int i = 0; i < 20; i++) {
+        If (A[i] % 2 == 0) {
+            Even[eCount++] = A[i];
+        } else {
+            Odd[oCount++] = A[i];
+        }
+    }
+
+    Cout << “\nEven numbers:\n”;
+    For (int i = 0; i < eCount; i++) {
+        Cout << even[i] << “ “;
+    }
+
+    Cout << “\n\nOdd numbers:\n”;
+    For (int i = 0; i < oCount; i++) {
+        Cout << odd[i] << “ “;
+    }
+
+    Return 0;
+}
+
+
+
+
+
+
+
+
