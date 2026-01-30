@@ -1,0 +1,41 @@
+Standard C++ review — summarize standard library; at least 5 include directives & basic facilities
+
+C++ Standard Library (summary):
+
+A large collection of ready-made components (containers, algorithms, iterators, utilities, I/O, strings, numerics, threading, etc.) that let you write safe, efficient code without reimplementing common functionality.
+
+Organized into headers (e.g. <vector>, <algorithm>, <iostream>). Most features live in the std namespace.
+
+Key categories:
+
+Containers: vector, list, deque, map, unordered_map, set — store and manage collections.
+
+Algorithms: sort, find, for_each, transform, accumulate — generic operations that work with iterators.
+
+Iterators: adapt containers to algorithms (input, output, forward, bidirectional, random-access).
+
+I/O: streams (cin, cout, ifstream, ofstream) for formatted and file I/O.
+
+Strings: std::string with many utilities (substr, find, append).
+
+Utilities & Smart pointers: std::pair, std::tuple, std::unique_ptr, std::shared_ptr.
+
+STL complexity guarantees: many operations have documented time/space complexity (e.g., vector random access O(1), map lookup O(log n)).
+
+
+
+At least five include directives (common ones) and what they give you:
+
+#include <iostream>    // std::cin, std::cout, std::cerr (I/O streams)
+#include <vector>      // std::vector container
+#include <algorithm>   // std::sort, std::find, std::for_each, etc.
+#include <string>      // std::string and related functions
+#include <map>         // std::map ordered associative container
+
+Other useful headers: <unordered_map>, <memory> (smart pointers), <numeric> (accumulate), <fstream> (file streams), <sstream> (string streams), <cmath> (math functions), <thread> (multithreading).
+
+
+
+
+
+
