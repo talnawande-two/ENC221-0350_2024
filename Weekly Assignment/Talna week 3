@@ -1,0 +1,94 @@
+ Briefly summarize C++ data types with examples — list of data types with examples
+
+Fundamental (built-in) types:
+
+bool — boolean values: true, false.
+Example: bool flag = true;
+
+char — character type (usually 1 byte).
+Example: char c = 'A';
+
+signed char, unsigned char — small integer types for raw bytes.
+
+int — integer (signed).
+Example: int i = -42;
+
+short, long, long long — integer types with different ranges.
+Example: long long big = 900000000000LL;
+
+unsigned variants — only nonnegative values (e.g. unsigned int n = 10u;).
+
+float, double, long double — floating-point numbers.
+Example: double x = 3.14159;
+
+wchar_t, char16_t, char32_t — wide/Unicode character types.
+
+
+Derived & compound types:
+
+Pointers: int* p = &i; (store memory addresses).
+
+References: int& r = i; (alias to another object).
+
+Arrays: int a[5] = {1,2,3,4,5};
+
+Function types / pointers: int (*fn)(int);
+
+
+User-defined types:
+
+struct / class / union: group data + behavior.
+Example:
+
+struct Employee {
+  std::string name;
+  int age;
+  double salary;
+};
+Employee e{"Alice", 30, 5000.0};
+
+enum / enum class: enumerations.
+Example: enum class Color { Red, Green, Blue };
+
+
+Standard library types (commonly used):
+
+std::string — dynamic string type. Example: std::string s = "hello";
+
+std::vector<T> — dynamic array. Example: std::vector<int> v = {1,2,3};
+
+std::map<Key,Value>, std::unordered_map<Key,Value> — associative containers.
+
+Smart pointers: std::unique_ptr<T>, std::shared_ptr<T> — automatic lifetime management.
+
+
+Type qualifiers and modifiers:
+
+const — read-only after initialization. Example: const int N = 10;
+
+volatile — value might change outside program flow (rare).
+
+static (in various contexts) — internal linkage or extended lifetime.
+
+mutable — allows modification in const contexts (member fields).
+
+
+Example demonstrating several types together:
+
+#include <string>
+#include <vector>
+
+struct Person {
+    std::string name;
+    int age;
+};
+
+int main() {
+    const int MAX = 100;
+    std::vector<Person> roster;
+    roster.push_back({"Sam", 21});
+    roster.push_back({"Maya", 22});
+    return 0;
+}
+
+
