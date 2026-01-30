@@ -1,0 +1,112 @@
+Pointers, Reference & Memory Management
+
+Write a function that finds the largest of three fractions using pass-by-reference and return-by-reference.
+
+
+
+1.	Key Concepts 
+
+(a)	Pointer
+
+A variable that stores the memory address of another variable.
+
+
+Int x = 10;
+Int *p = &x;
+
+(b)	Reference
+
+An alias (another name) for an existing variable.
+
+
+Int x = 10;
+Int &ref = x;
+
+(c)	Pass-by-Reference
+
+Function receives references → changes affect original variables.
+
+
+(d)	Return-by-Reference
+
+Function returns a reference to an existing variable (⚠ must not return local variables).
+
+
+
+
+2.	Fraction Representation
+
+We represent a fraction using numerator / denominator.
+
+Struct Fraction {
+    Int num;
+    Int den;
+};
+
+
+
+3.	Comparing Fractions
+
+To compare two fractions:
+
+a/b > c/d \Rightarrow a \times d > c \times b
+
+
+
+4.	Pseudocode (Exam Friendly)
+
+BEGIN
+  Define structure Fraction (numerator, denominator)
+
+  FUNCTION largestFraction(ref f1, ref f2, ref f3) RETURNS ref
+     SET largest = f1
+     IF f2 > largest THEN
+        Largest = f2
+     END IF
+     IF f3 > largest THEN
+        Largest = f3
+     END IF
+     RETURN largest
+  END FUNCTION
+END
+
+
+
+5.	C++ Program (Pass-by-Reference + Return-by-Reference)
+
+#include <iostream>
+Using namespace std;
+
+Struct Fraction {
+    Int num;
+    Int den;
+};
+
+// Function returns a reference
+Fraction& largestFraction(Fraction &f1, Fraction &f2, Fraction &f3) {
+    Fraction *largest = &f1;
+
+    If (f2.num * largest->den > largest->num * f2.den) {
+        Largest = &f2;
+    }
+
+    If (f3.num * largest->den > largest->num * f3.den) {
+        Largest = &f3;
+    }
+
+    Return *largest;
+}
+
+Int main() {
+    Fraction f1 = {1, 2};
+    Fraction f2 = {3, 4};
+    Fraction f3 = {2, 3};
+
+    Fraction &largest = largestFraction(f1, f2, f3);
+
+    Cout << “Largest fraction is: “
+         << largest.num << “/” << largest.den << endl;
+
+    Return 0;
+}
+
